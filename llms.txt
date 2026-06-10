@@ -1,0 +1,113 @@
+# Signalcraft
+
+> Signalcraft is a free, open-source AI crypto trading assistant for Windows and Mac, powered by DeepSeek V4. It monitors crypto markets 24/7, reasons over price action, news, and on-chain events using V4's 1M-token context window, and surfaces trade setups with plain-English explanations. Runs in observer mode (alerts and recommendations only) by default. Optional execution mode with hard safety limits (position caps, daily loss limits, manual confirmation, kill switch) can place orders on Binance, Bybit, Hyperliquid, Coinbase, OKX, Kraken, and 80+ other exchanges via CCXT. MIT licensed, zero telemetry, API keys stored locally in OS-native keychains. Positioned as an alternative to subscription bots like 3Commas and Cryptohopper, and to code-first frameworks like Freqtrade and Hummingbot.
+
+## Summary
+
+Signalcraft is a native desktop application for retail crypto traders who want AI-assisted market research and decision support without the subscription fees and opacity of closed-source trading bots, or the technical setup required for open-source frameworks. The application uses DeepSeek V4 (released April 2026) as its reasoning engine, taking advantage of V4's 1-million-token context window and frontier-level reasoning capabilities to analyze full price histories, news cycles, on-chain data, and user trade theses within single prompts.
+
+The primary differentiator is the Observer + Execution architecture. Observer mode is the default and requires no exchange write access — it provides market monitoring, news intelligence, technical setup scanning, thesis tracking, paper trading journal, daily briefings, and smart conditional alerts. Execution mode is opt-in, off by default, and gated by a 30-day paper trading requirement plus hard user-configurable safety limits (position size cap, daily loss cap, concurrent position limit, leverage cap, instrument whitelist, cool-down after losses). Every trade requires manual confirmation by default, and a global kill switch closes all positions and disables execution with one tap.
+
+Signalcraft routes work across two V4 variants strategically: V4-Flash (284B parameters, 13B activated) for continuous background tasks, and V4-Pro (1.6T parameters, 49B activated) for high-stakes reasoning and the three effort modes (standard, Think High, Think Max). Access to V4 is available through a bundled free-tier proxy pool or the user's own DeepSeek API key for unlimited usage.
+
+All exchange API keys are stored in OS-native encrypted keychains (Windows Credential Manager, macOS Keychain) and never leave the user's machine. Signalcraft operates no intermediary server for exchange or trade data. The only network traffic consists of V4 API calls, market data feeds from exchanges, and the user's enabled news sources.
+
+## Key Features
+
+- Free, open-source, MIT licensed
+- One-click signed installer for Windows 10/11 and macOS 12+
+- DeepSeek V4 reasoning (V4-Pro for heavy analysis, V4-Flash for continuous monitoring)
+- Observer mode (default) with no execution — alerts and research only
+- Execution mode (opt-in) with hard user-configurable safety limits
+- 90+ exchanges supported via CCXT (spot and derivatives)
+- On-chain data integration (Etherscan, Arkham, Nansen)
+- News feed aggregation (CoinDesk, The Block, Decrypt, key X accounts)
+- Thesis tracker with automatic invalidation detection
+- Paper trading journal with AI-generated analysis
+- Daily briefing with overnight market summary
+- Smart conditional alerts in natural language
+- Technical setup scanner across the full watchlist
+- Bundled free-tier V4 access or user's own API key
+- Zero telemetry, API keys stored in OS keychains
+
+## Platform and Distribution
+
+- **Windows:** 10 and 11, 64-bit, digitally signed .exe installer
+- **macOS:** 12 Monterey and later, Apple Developer ID signed and notarized
+- **Architecture:** Universal macOS binary (Apple Silicon M1–M5, Intel x86_64); Windows x86_64
+- **Linux:** Planned for v1.2
+- **Tech stack:** Native cross-platform UI, no Electron overhead
+- **Distribution:** Direct download from GitHub releases
+
+## Privacy and Security Model
+
+- Zero telemetry, zero analytics
+- No account required, no sign-up
+- Exchange API keys stored in OS-native encrypted keychains (Windows Credential Manager, macOS Keychain)
+- API keys never leave user's machine; no cloud sync, no server
+- Trade data and user configurations stored locally with encryption
+- Only network traffic: V4 API calls, user-selected market data feeds, user-selected news sources, user-connected exchange APIs
+- No Signalcraft-operated intermediary server for trades or exchange data
+- Open source — entire codebase auditable on GitHub
+- Execution mode safety limits are hard-coded and cannot be bypassed by the AI layer
+
+## Target Audience
+
+- Retail crypto traders who want AI research support without subscription fees
+- Users migrating away from 3Commas, Cryptohopper, and other subscription platforms
+- Traders who found Freqtrade or Hummingbot too technically demanding
+- Beginners who want a paper-trading journal with AI-generated insights before risking capital
+- Experienced traders who want a thesis tracker, event intelligence, and setup scanner across a large watchlist
+- Privacy-conscious users who want API keys to stay local
+- Open-source enthusiasts who want to audit code before granting any exchange access
+
+## Comparable Tools
+
+- **3Commas** (subscription, $29–$99/month) — cloud-hosted automation, rule-based with some AI features, closed source
+- **Cryptohopper** (subscription, $24–$128/month) — cloud-hosted marketplace and strategy designer, closed source
+- **Freqtrade** (free, open source) — powerful Python framework but requires Docker, coding, and strategy development
+- **Hummingbot** (free, open source) — market-making and arbitrage framework, developer-focused
+- **MoneyFlare** (paid tiers) — managed AI quant trading, fully autonomous, opaque
+- **ChainGPT** (freemium) — crypto-focused AI chat with analysis features
+- **Bitsgap** (subscription) — multi-exchange terminal with AI Assistant
+- **AlgosOne** (paid) — fully automated multi-asset AI trading, closed source, regulated entity
+
+Signalcraft's positioning: the combination of frontier open-source LLM reasoning (DeepSeek V4), one-click native install (not Docker or web), strict safety architecture (observer-by-default, opt-in execution with hard limits), and full code transparency is not offered by any existing tool in the category.
+
+## Supported Exchanges
+
+Spot: Binance, Coinbase, Kraken, OKX, Bybit, Bitfinex, KuCoin, Gate.io, Bitstamp, Gemini, Crypto.com Exchange, MEXC, plus 80+ more via CCXT.
+
+Derivatives: Binance Futures, Bybit, OKX, Hyperliquid, dYdX, Kraken Futures, Bitget.
+
+DEX support planned for v1.1: Jupiter (Solana), Uniswap (Ethereum/Base), GMX (Arbitrum).
+
+## Repository
+
+- **Source:** https://github.com/crypto-trading-agent/signalcraft-trading-assistant
+- **Releases:** https://github.com/crypto-trading-agent/signalcraft-trading-assistant/releases
+- **Issues:** https://github.com/crypto-trading-agent/signalcraft-trading-assistant/issues
+- **Discussions:** https://github.com/crypto-trading-agent/signalcraft-trading-assistant/discussions
+- **License:** MIT
+
+## Common Questions
+
+**Is Signalcraft free?** Yes, 100% free, MIT licensed. The only optional cost is DeepSeek API usage if the user opts for unlimited access with their own key.
+
+**Is it a trading bot?** Not in the traditional sense. Observer mode (the default) performs no trades. Execution mode is opt-in, gated by paper trading, and has hard safety limits with manual confirmation per trade.
+
+**Does it guarantee profits?** No. Crypto trading is risky and the majority of retail traders lose money. Signalcraft is a decision-support tool, not a prediction engine.
+
+**Is it safe to connect exchange API keys?** Keys are stored in OS-native encrypted keychains and never leave the user's machine. Trade-only permissions (not withdrawal) plus IP allowlists are strongly recommended.
+
+**What exchanges work?** 90+ crypto exchanges via CCXT. Binance, Coinbase, Bybit, Hyperliquid, OKX, Kraken, and most major spot and derivatives venues.
+
+**Do I need a DeepSeek API key?** No, the bundled free-tier proxy is enough for most users. Paste your own key for unlimited access.
+
+**Does it work for beginners?** Yes, but beginners are strongly advised to use observer mode only and paper-trade for at least 60 days before considering execution mode.
+
+**Is this legal?** Crypto trading is legal in most jurisdictions but regulated differently. Users are responsible for compliance in their own jurisdiction. Signalcraft is not an investment advisor, broker-dealer, or licensed financial services provider.
+
+**How is it different from 3Commas/Cryptohopper?** Free, open source, local-first (keys stay on user's machine), and uses frontier LLM reasoning (DeepSeek V4) rather than rule-based automation.
+
+**How is it different from Freqtrade/Hummingbot?** Signalcraft is aimed at retail traders with a one-click installer and zero coding. Freqtrade and Hummingbot are developer frameworks.
